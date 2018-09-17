@@ -133,7 +133,7 @@ class PipelineVerifiersTest(unittest.TestCase):
     self.assertEqual(cm.exception.args[0],
                      'Sleep seconds, if received, must be int. '
                      'But received: \'invalid_sleep_time\', '
-                     '<type \'str\'>')
+                     '{}'.format(str))
 
   @patch('time.sleep', return_value=None)
   def test_file_checksum_matcher_sleep_before_verify(self, mocked_sleep):
